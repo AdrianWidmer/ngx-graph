@@ -156,6 +156,10 @@ export class GraphComponent implements OnInit, OnChanges, OnDestroy, AfterViewIn
   height: number;
   resizeSubscription: any;
   visibilityObserver: VisibilityObserver;
+  minY: number;
+  maxY: number;
+  minX: number;
+  maxX: number;
 
   constructor(
     private el: ElementRef,
@@ -589,15 +593,21 @@ export class GraphComponent implements OnInit, OnChanges, OnDestroy, AfterViewIn
 
     for (let i = 0; i < this.graph.nodes.length; i++) {
       const node = this.graph.nodes[i];
-      minX = node.position.x < minX ? node.position.x : minX;
-      minY = node.position.y < minY ? node.position.y : minY;
-      maxX = node.position.x + node.dimension.width > maxX ? node.position.x + node.dimension.width : maxX;
-      maxY = node.position.y + node.dimension.height > maxY ? node.position.y + node.dimension.height : maxY;
+      let halfWidth = node.dimension.width / 2;
+      let halfHeight = node.dimension.height / 2;
+      minX = node.position.x - halfWidth < minX ? node.position.x - halfWidth : minX;
+      minY = node.position.y - halfHeight < minY ? node.position.y - halfHeight : minY;
+      maxX = node.position.x + halfWidth > maxX ? node.position.x + halfWidth : maxX;
+      maxY = node.position.y + halfHeight > maxY ? node.position.y + halfHeight : maxY;
     }
     minX -= 100;
+    this.minX = minX;
     minY -= 100;
+    this.minY = minY;
     maxX += 100;
+    this.maxX = maxX;
     maxY += 100;
+    this.maxY = maxY;
     this.graphDims.width = maxX - minX;
     this.graphDims.height = maxY - minY;
     this.minimapOffsetX = minX;
@@ -1141,7 +1151,7 @@ export class GraphComponent implements OnInit, OnChanges, OnDestroy, AfterViewIn
    * Center the graph in the viewport
    */
   center(): void {
-    this.panTo(this.graphDims.width / 2, this.graphDims.height / 2);
+    this.panTo(this.minX + this.graphDims.width / 2, this.minY + this.graphDims.height / 2);
   }
 
   /**

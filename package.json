@@ -1,7 +1,7 @@
 {
   "name": "ngx-graph",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
