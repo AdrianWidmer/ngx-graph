@@ -1,6 +1,6 @@
 {
-  "name": "@vgt/ngx-graph",
-  "version": "0.0.0",
+  "name": "ngx-graph-vgt",
+  "version": "0.0.1",
   "description": "Graph visualization for angular",
   "private": false,
   "keywords": [

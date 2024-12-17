@@ -1,6 +1,6 @@
 # ngx-graph
 
-[![NPM](https://img.shields.io/npm/v/@kr0san89/ngx-graph?color=orange&style=flat-square)](https://www.npmjs.com/package/@kr0san89/ngx-graph)
+[![NPM](https://img.shields.io/npm/v/ngx-graph-vgt?color=orange&style=flat-square)](https://www.npmjs.com/package/ngx-graph-vgt)
 [![License](https://img.shields.io/github/license/Kr0san89/ngx-graph?color=blue&style=flat-square)](https://github.com/Kr0san89/ngx-graph/blob/master/LICENSE)
 [![Love Angular badge](https://img.shields.io/badge/angular-love-blue?logo=angular&angular=love)](https://www.github.com/angular/angular)
 [![GitHub issues](https://img.shields.io/github/issues/Kr0san89/ngx-graph.svg 'GitHub issues')](https://github.com/Kr0san89/ngx-graph)
@@ -15,7 +15,7 @@ https://swimlane.github.io/ngx-graph/
 
 ## Installation
 
-1. `npm install @kr0san89/ngx-graph --save`
+1. `npm install ngx-graph-vgt --save`
 2. Import `NgxGraphModule` into your module
 3. Use the `ngx-graph` component in your components
 
